@@ -18,6 +18,8 @@
 //  eliminate duplicate permutations.  If the implementation fails in being orders
 //  of magnitude faster than that, then it has failed miserably.
 
+# pragma once 
+
 #include <iterator>
 #include <algorithm>
 
