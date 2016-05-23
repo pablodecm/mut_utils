@@ -457,7 +457,7 @@ namespace nanoflann
 	 */
 
 	const size_t     WORDSIZE=16;
-	const size_t     BLOCKSIZE=8192;
+	const size_t     BLOCKSIZE_NF=8192;
 
 	class PooledAllocator
 	{
@@ -528,8 +528,8 @@ namespace nanoflann
 				wastedMemory += remaining;
 
 				/* Allocate new storage. */
-				const size_t blocksize = (size + sizeof(void*) + (WORDSIZE-1) > BLOCKSIZE) ?
-							size + sizeof(void*) + (WORDSIZE-1) : BLOCKSIZE;
+				const size_t blocksize = (size + sizeof(void*) + (WORDSIZE-1) > BLOCKSIZE_NF) ?
+							size + sizeof(void*) + (WORDSIZE-1) : BLOCKSIZE_NF;
 
 				// use the standard C malloc to allocate memory
 				void* m = ::malloc(blocksize);
